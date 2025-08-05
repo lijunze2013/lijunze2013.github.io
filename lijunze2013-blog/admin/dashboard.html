@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理面板 - lijunze2013的博客</title>
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <!-- 后台导航 -->
+    <header class="admin-header">
+        <div class="admin-logo">
+            <a href="dashboard.html">lijunze2013 管理面板</a>
+        </div>
+        <div class="admin-user-info">
+            <span>管理员</span>
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> 退出登录
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="admin-container">
+        <div class="admin-sidebar">
+            <nav class="admin-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" class="active">
+                            <i class="fas fa-tachometer-alt"></i> 控制面板
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i> 个人资料
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <i class="fas fa-briefcase"></i> 项目管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i> 系统设置
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="admin-content">
+            <div class="admin-page-header">
+                <h1>控制面板</h1>
+                <p>欢迎回来，管理员</p>
+            </div>
+            
+            <!-- 统计信息 -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>网站访问量</h3>
+                        <p id="totalVisits">--</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>项目数量</h3>
+                        <p id="projectCount">3</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>上次登录</h3>
+                        <p id="lastLogin">--</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-cards-grid">
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h2>快速操作</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="action-buttons">
+                            <a href="profile.html" class="btn secondary-btn">
+                                <i class="fas fa-user-edit"></i> 编辑资料
+                            </a>
+                            <a href="projects.html" class="btn secondary-btn">
+                                <i class="fas fa-plus"></i> 添加项目
+                            </a>
+                            <a href="settings.html" class="btn secondary-btn">
+                                <i class="fas fa-cog"></i> 系统设置
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h2>系统信息</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="system-info">
+                            <li><strong>系统版本:</strong> 1.0.0</li>
+                            <li><strong>上次更新:</strong> 2023-09-15</li>
+                            <li><strong>数据库状态:</strong> 正常</li>
+                            <li><strong>服务器时间:</strong> <span id="serverTime"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/admin.js"></script>
+</body>
+</html>
+    

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资料 - lijunze2013的博客管理</title>
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <!-- 后台导航 -->
+    <header class="admin-header">
+        <div class="admin-logo">
+            <a href="dashboard.html">lijunze2013 管理面板</a>
+        </div>
+        <div class="admin-user-info">
+            <span>管理员</span>
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> 退出登录
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="admin-container">
+        <div class="admin-sidebar">
+            <nav class="admin-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i> 控制面板
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html" class="active">
+                            <i class="fas fa-user"></i> 个人资料
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <i class="fas fa-briefcase"></i> 项目管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i> 系统设置
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="admin-content">
+            <div class="admin-page-header">
+                <h1>个人资料</h1>
+                <p>管理您的个人信息和资料</p>
+            </div>
+            
+            <div class="admin-card">
+                <div class="card-header">
+                    <h2>基本信息</h2>
+                </div>
+                <div class="card-body">
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-row">
+                            <div class="form-group profile-picture-group">
+                                <label>个人头像</label>
+                                <div class="profile-picture">
+                                    <img src="../static/images/placeholder.jpg" alt="个人头像" id="profileImage">
+                                    <input type="file" id="imageUpload" accept="image/*">
+                                    <button type="button" id="changeImageBtn" class="btn secondary-btn">
+                                        <i class="fas fa-upload"></i> 更换头像
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group profile-info-group">
+                                <div class="form-group">
+                                    <label for="fullName">姓名</label>
+                                    <input type="text" id="fullName" name="fullName" placeholder="输入您的姓名">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bio">个人简介</label>
+                                    <textarea id="bio" name="bio" rows="4" placeholder="输入个人简介"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="website">个人网站</label>
+                                <input type="url" id="website" name="website" placeholder="https://example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">电子邮箱</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>社交媒体链接</label>
+                            <div class="social-links-group">
+                                <div class="form-group social-link-item">
+                                    <label><i class="fab fa-github"></i> GitHub</label>
+                                    <input type="url" id="github" name="github" placeholder="GitHub 链接">
+                                </div>
+                                <div class="form-group social-link-item">
+                                    <label><i class="fab fa-twitter"></i> Twitter</label>
+                                    <input type="url" id="twitter" name="twitter" placeholder="Twitter 链接">
+                                </div>
+                                <div class="form-group social-link-item">
+                                    <label><i class="fab fa-linkedin"></i> LinkedIn</label>
+                                    <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn 链接">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-message" id="message"></div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">
+                                <i class="fas fa-save"></i> 保存更改
+                            </button>
+                            <button type="button" id="cancelBtn" class="btn secondary-btn">
+                                <i class="fas fa-times"></i> 取消
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="admin-card">
+                <div class="card-header">
+                    <h2>密码修改</h2>
+                </div>
+                <div class="card-body">
+                    <form id="passwordForm" class="password-form">
+                        <div class="form-group">
+                            <label for="currentPassword">当前密码</label>
+                            <input type="password" id="currentPassword" name="currentPassword" placeholder="输入当前密码" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newPassword">新密码</label>
+                            <input type="password" id="newPassword" name="newPassword" placeholder="输入新密码" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">确认新密码</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="再次输入新密码" required>
+                        </div>
+                        
+                        <div class="form-message" id="passwordMessage"></div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">
+                                <i class="fas fa-key"></i> 更新密码
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/admin.js"></script>
+</body>
+</html>
+    
