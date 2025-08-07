@@ -1,35 +1,35 @@
-
- 
-<头>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lijunze2013的博客，李俊泽title</>
-    <链接 关系="样式表" 链接="静态/css/样式.css">
-    <链接 关系="样式表" 链接="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</头>
-<身体>
-    
-    <标题 id="导航栏" 类="导航栏">
-        <div 类="容器">
-            <div 类="logo">
-                <a href="index.html">李军泽2013</a>
+    <title>lijunze2013的博客</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 - 滚动时变化样式 -->
+    <header id="navbar" class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">lijunze2013</a>
             </div>
-            <导航 类="桌面导航">
-                <无序列表>
+            <nav class="desktop-nav">
+                <ul>
                     <li><a href="#" class="active">首页</a></li>
                     <li><a href="#about">关于</a></li>
                     <li><a href="#projects">项目</a></li>
                     <li><a href="admin/login.html">管理</a></li>
-                </无序列表>
-            </导航>
-            <按钮 类="移动菜单按钮" id="移动菜单按钮">
-                <我 类="fas fa-bars"></我>
-            </按钮>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
         
-        
-        <导航 类="移动导航" id="移动导航">
-            <无序列表>
+        <!-- 移动端菜单 -->
+        <nav class="mobile-nav" id="mobileNav">
+            <ul>
                 <li><a href="#" class="active">首页</a></li>
                 <li><a href="#about">关于</a></li>
                 <li><a href="#projects">项目</a></li>
@@ -77,7 +77,7 @@
                     <img src="static/images/placeholder.jpg" alt="项目图片" class="project-image">
                     <h3>项目一</h3>
                     <p>这是我的第一个项目简介，简洁展示项目特点和成果。</p>
-                    <一个 超链接="#" 类="按钮 次级按钮">查看详情</超链接>
+                    <a href="#" class="btn secondary-btn">查看详情</a>
                 </div>
                 <div class="project-card">
                     <img src="static/images/placeholder.jpg" alt="项目图片" class="project-image">
@@ -125,7 +125,7 @@
                 <div class="footer-logo">
                     <a href="index.html">lijunze2013</a>
                 </div>
-                <p>© 2025 个人博客空间. 保留所有权利.</p>
+                <p>© 2023 个人博客空间. 保留所有权利.</p>
                 <div class="footer-links">
                     <a href="#about">关于</a>
                     <a href="#projects">项目</a>
