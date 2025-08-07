@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目管理 - 管理后台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <a href="/" class="logo">李俊泽的博客</a>
+            <button id="mobileMenuBtn" class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#home">首页</a></li>
+                <li><a href="/#projects">项目</a></li>
+                <li><a href="/#about">关于</a></li>
+                <li><a href="/#contact">联系</a></li>
+                <li><a href="/admin/login" class="active">管理</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobileNav" class="mobile-nav">
+        <ul>
+            <li><a href="/#home">首页</a></li>
+            <li><a href="/#projects">项目</a></li>
+            <li><a href="/#about">关于</a></li>
+            <li><a href="/#contact">联系</a></li>
+            <li><a href="/admin/login">管理</a></li>
+        </ul>
+    </div>
+
+    <div class="admin-container">
+        <div class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard">仪表盘</a></li>
+                <li><a href="/admin/projects" class="active">项目管理</a></li>
+                <li><a href="/admin/profile">个人资料</a></li>
+                <li><a href="/admin/settings">系统设置</a></li>
+                <li><a href="#" id="logoutBtn">退出登录</a></li>
+            </ul>
+        </div>
+        <div class="admin-content">
+            <div class="admin-header">
+                <h1>项目管理</h1>
+            </div>
+            
+            <!-- 添加新项目表单 -->
+            <div class="form-container">
+                <h2>添加新项目</h2>
+                <div id="message" class="form-message"></div>
+                <form id="projectForm">
+                    <div class="form-group">
+                        <label for="title">项目名称</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">项目描述</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">项目分类</label>
+                        <select id="category" name="category">
+                            <option value="Web开发">Web开发</option>
+                            <option value="应用程序">应用程序</option>
+                            <option value="移动应用">移动应用</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">图片URL</label>
+                        <input type="text" id="image" name="image" placeholder="https://example.com/image.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="link">项目链接</label>
+                        <input type="url" id="link" name="link" placeholder="https://example.com">
+                    </div>
+                    <button type="submit" class="btn">添加项目</button>
+                </form>
+            </div>
+            
+            <!-- 项目列表 -->
+            <div style="margin-top: 30px;">
+                <h2>项目列表</h2>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>分类</th>
+                                <th>描述</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="projectsList">
+                            <!-- 项目列表将通过JavaScript动态加载 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑项目模态框 -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>编辑项目</h2>
+            <form id="editProjectForm">
+                <input type="hidden" id="editProjectId">
+                <div class="form-group">
+                    <label for="editTitle">项目名称</label>
+                    <input type="text" id="editTitle" name="editTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="editDescription">项目描述</label>
+                    <textarea id="editDescription" name="editDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editCategory">项目分类</label>
+                    <select id="editCategory" name="editCategory">
+                        <option value="Web开发">Web开发</option>
+                        <option value="应用程序">应用程序</option>
+                        <option value="移动应用">移动应用</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editImage">图片URL</label>
+                    <input type="text" id="editImage" name="editImage" placeholder="https://example.com/image.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="editLink">项目链接</label>
+                    <input type="url" id="editLink" name="editLink" placeholder="https://example.com">
+                </div>
+                <button type="submit" class="btn">保存修改</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>
+    
